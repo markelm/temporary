@@ -73,6 +73,7 @@ private:
 
 public:
   HashDictionary () {
+	  n = 0;
   }
 
   bool insert (KeyValue<K, V> item) {
