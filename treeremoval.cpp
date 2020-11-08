@@ -75,6 +75,7 @@ private:
 		node->father->left = nullptr;
 	if(node == root)
 		root = nullptr;
+	node = nullptr;
 	delete node;
 	n--;
     } else if(count == 1){
@@ -85,6 +86,9 @@ private:
 		node->father->right = spawn;
 	else if(node->father != nullptr && node->father->left == node)
 		node->father->left = spawn;
+	if(node == root)
+		root = nullptr;
+	node = nullptr;
 	delete node;
 	n--;
     } else{
@@ -93,7 +97,6 @@ private:
 	    while(tmp->left)
 		    tmp = tmp->left;
 	    node->value = tmp->value;
-	    node->right = tmp->right;
 	    remove(tmp);
     
     }
